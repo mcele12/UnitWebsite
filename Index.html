@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>792ISS Warriors</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Load GreenSock (GSAP) and ScrollTrigger for smooth scroll effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  </head>
+  <body>
+    <!-- The background 3D canvas where our digital world lives -->
+    <div class="canvas-container">
+      <!-- We can simulate the 3D depth using pure CSS parallax or Three.js. 
+             For this setup, we'll use an advanced layered CSS 3D structure controlled by GSAP -->
+      <div class="matrix-bg"></div>
+      <img
+        src="Unit Logo.png"
+        alt="792ISS Logo"
+        class="3d-logo"
+        id="hero-logo"
+      />
+    </div>
+
+    <!-- Scrollable content sections -->
+    <main class="scroll-container">
+      <section class="panel transparent"></section>
+      <!-- Spacer for intro -->
+
+      <section class="panel content-section">
+        <div class="card">
+          <h2>// SECURE COMMUNICATIONS</h2>
+          <p>
+            Deploying advanced cryptographic infrastructure and maintaining
+            ironclad tactical network architectures down range.
+          </p>
+        </div>
+      </section>
+
+      <section class="panel content-section right">
+        <div class="card">
+          <h2>// CYBER TRANS OPERATIONS</h2>
+          <p>
+            Defending the digital perimeter. Optimizing routing, switching, and
+            hardware nodes across the Pacific theater.
+          </p>
+        </div>
+      </section>
+
+      <section class="panel content-section">
+        <div class="card">
+          <h2>// WARRIOR ETHOS</h2>
+          <p>
+            Bridging traditional cultural strength with relentless modern
+            technical dominance.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

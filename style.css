@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+}
+
+body {
+  background-color: #080a08;
+  color: #00ff66;
+  overflow-x: hidden;
+}
+
+/* 3D Scene Layering */
+.canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px; /* Gives us real 3D depth */
+  background: radial-gradient(circle, #0c1a0f 0%, #050705 100%);
+}
+
+.3d-logo {
+  max-width: 600px;
+  width: 80%;
+  filter: drop-shadow(0 0 25px rgba(0, 255, 102, 0.6));
+  transform: translateZ(0px);
+  transition: filter 0.3s ease;
+}
+
+/* Web Matrix Background Simulation */
+.matrix-bg {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1920")
+      center/cover;
+  opacity: 0.15;
+  transform: translateZ(-200px); /* Pushed deep into the background */
+  filter: hue-rotate(60deg);
+}
+
+/* Scrollable panels */
+.scroll-container {
+  position: relative;
+  z-index: 2; /* Sits cleanly on top of the fixed canvas */
+}
+
+.panel {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 10%;
+}
+
+.panel.right {
+  justify-content: flex-end;
+}
+
+/* Cyberpunk UI Text Cards */
+.card {
+  background: rgba(8, 13, 9, 0.85);
+  border: 2px solid #00ff66;
+  padding: 2rem;
+  max-width: 500px;
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 0 20px rgba(0, 255, 102, 0.2),
+    inset 0 0 15px rgba(0, 255, 102, 0.1);
+  border-radius: 4px;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 8px #00ff66;
+  letter-spacing: 2px;
+}
+
+.card p {
+  color: #a3ffd0;
+  line-height: 1.6;
+}
